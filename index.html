@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Dining Concepts & Consultancy</title>
+    <!-- Google Fonts for High-End Typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@200;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PREMIUM COLOR PALETTE & BASICS --- */
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1a1a1a;
+            --accent-gold: #c5a880;
+            --accent-gold-hover: #e0c6a3;
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+            --font-luxury: 'Cinzel', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 5%;
+            background: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+        }
+
+        .logo {
+            font-family: var(--font-luxury);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul a {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav ul a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+        }
+
+        .hero h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-luxury);
+            font-size: 3.5rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            max-width: 900px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            font-weight: 200;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: all 0.4s ease;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+            box-shadow: 0 0 15px rgba(197, 168, 128, 0.3);
+            cursor: pointer;
+        }
+
+        /* --- SECTION GENERIC STYLING --- */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-family: var(--font-luxury);
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--text-light);
+        }
+
+        .section-title div {
+            width: 50px;
+            height: 1px;
+            background-color: var(--accent-gold);
+            margin: 20px auto 0;
+        }
+
+        /* --- SHOWCASE / PORTFOLIO GRID --- */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .showcase-item {
+            position: relative;
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            border-radius: 2px;
+            transition: transform 0.4s;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(197, 168, 128, 0.3);
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: opacity 0.4s;
+        }
+
+        .showcase-item:hover .showcase-img {
+            opacity: 0.9;
+        }
+
+        .showcase-content {
+            padding: 25px;
+        }
+
+        .showcase-content h3 {
+            font-family: var(--font-luxury);
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .showcase-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 200;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .service-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .service-box h3 {
+            font-family: var(--font-luxury);
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .service-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 200;
+        }
+
+        /* --- CONTACT & PORTAL FORM --- */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            padding: 40px;
+            border: 1px solid rgba(197, 168, 128, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #222;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            header { padding: 20px 5%; }
+            nav { display: none; } /* Kept clean for single-page style */
+            .hero h1 { font-size: 2.2rem; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION HEADER -->
+    <header>
+        <div class="logo">CONCEPT 360</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#concepts">Concepts</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <h3>Nature • Innovation • Culture</h3>
+        <h1>Designing High-End Immersive Dining Experiences</h1>
+        <p>We bridge culinary artistry, interior design, and strategic brand intelligence to launch iconic concepts across the globe.</p>
+        <a href="#concepts" class="btn-gold">Explore Showrooms</a>
+    </section>
+
+    <!-- CONCEPTS SHOWCASE SECTION -->
+    <section id="concepts">
+        <div class="section-title">
+            <h2>Global Concepts</h2>
+            <div></div>
+        </div>
+        <div class="showcase-grid">
+            <!-- Concept 1 -->
+            <div class="showcase-item">
+                <img src="https://unsplash.com" alt="Abu Dhabi Concept" class="showcase-img">
+                <div class="showcase-content">
+                    <h3>Abu Dhabi</h3>
+                    <p>Blending contemporary architectural design with warm copper elements and signature circular wine installations.</p>
+                </div>
+            </div>
+            <!-- Concept 2 -->
